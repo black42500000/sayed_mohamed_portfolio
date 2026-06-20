@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>سيد محمد — مطور برمجيات</title>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.0/dist/index.global.js"
+    integrity="sha384-nWTzRTCY/9V4Bo352ehygr1c4cnst4XN6lMR3fipakEQrhVpc0hEM5Dii3Amz0sT"
+    crossorigin="anonymous"
+  ></script>
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style type="text/tailwindcss">
+    @custom-variant dark (&:where(.dark, .dark *));
+  </style>
+  <script>
+    document.documentElement.classList.add('dark');
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-dvh antialiased text-gray-100 overflow-x-hidden">
+
+  <!-- Animated Gradient Background -->
+  <div class="fixed inset-0 -z-10">
+    <div class="absolute inset-0 bg-[#0a0118]"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(10,1,24,0.6)_100%)]"></div>
+    <div class="noise"></div>
+  </div>
+
+  <div id="cursor-glow"></div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-4 left-1/2 -translate-x-1/2 z-40 w-[calc(100%-2rem)] max-w-5xl">
+    <div class="glass-nav flex items-center justify-between px-5 py-3">
+      <a href="#home" class="flex items-center gap-2.5 group">
+        <div class="logo-mark"><span>S</span></div>
+        <div class="hidden sm:block">
+          <div class="font-bold text-sm leading-tight">سيد محمد</div>
+          <div class="text-[10px] text-purple-300/70 leading-tight">Software Engineer</div>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-1 text-xs">
+        <a href="#about" class="nav-pill">عني</a>
+        <a href="#skills" class="nav-pill">المهارات</a>
+        <a href="#projects" class="nav-pill">الأعمال</a>
+        <a href="#contact" class="nav-pill">تواصل</a>
+        <a href="admin.html" class="nav-pill" title="لوحة التحكم"><i class="fas fa-lock text-[10px]"></i></a>
+      </div>
+      <a href="#contact" class="cta-btn text-xs">
+        <span>ابدأ مشروعك</span>
+        <i class="fas fa-arrow-left text-[10px]"></i>
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center px-4 sm:px-6 pt-24 pb-12">
+    <div class="max-w-6xl w-full">
+      <div class="flex justify-center mb-8">
+        <div class="status-badge">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+          </span>
+          <span>متاح للعمل · يونيو 2026</span>
+        </div>
+      </div>
+
+      <div class="text-center mb-10">
+        <p class="text-purple-300/80 text-sm sm:text-base mb-4 font-medium tracking-wide">مرحبًا، أنا</p>
+        <h1 class="hero-title mb-6">
+          <span class="block">سيد محمد</span>
+          <span class="block text-2xl sm:text-4xl md:text-5xl mt-3 font-normal text-gray-400">
+            أبني <span class="gradient-text font-bold">تجارب رقمية</span> استثنائية
+          </span>
+        </h1>
+        <p class="max-w-2xl mx-auto text-gray-400 leading-relaxed text-sm sm:text-base">
+          مطور Full-Stack شغوف بتحويل الأفكار إلى منتجات رقمية تجمع بين التصميم الأنيق والأداء العالي.
+          متخصص في بناء تطبيقات الويب الحديثة باستخدام أحدث التقنيات.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-3 mb-16">
+        <a href="#projects" class="primary-btn">
+          <span>استكشف أعمالي</span>
+          <i class="fas fa-arrow-left"></i>
+        </a>
+        <a href="https://wa.me/201090841534" target="_blank" class="ghost-btn whatsapp-btn">
+          <i class="fab fa-whatsapp text-lg"></i>
+          <span>راسلني واتساب</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto">
+        <div class="float-card" style="animation-delay:0s">
+          <div class="text-2xl mb-1">⚡</div>
+          <div class="font-bold text-xl gradient-text">+50</div>
+          <div class="text-[11px] text-gray-400">مشروع منجز</div>
+        </div>
+        <div class="float-card" style="animation-delay:0.2s">
+          <div class="text-2xl mb-1">🚀</div>
+          <div class="font-bold text-xl gradient-text">+5</div>
+          <div class="text-[11px] text-gray-400">سنوات خبرة</div>
+        </div>
+        <div class="float-card" style="animation-delay:0.4s">
+          <div class="text-2xl mb-1">💎</div>
+          <div class="font-bold text-xl gradient-text">+30</div>
+          <div class="text-[11px] text-gray-400">عميل سعيد</div>
+        </div>
+        <div class="float-card" style="animation-delay:0.6s">
+          <div class="text-2xl mb-1">🌍</div>
+          <div class="font-bold text-xl gradient-text">12</div>
+          <div class="text-[11px] text-gray-400">دولة حول العالم</div>
+        </div>
+      </div>
+
+      <div class="flex justify-center mt-16 animate-bounce">
+        <div class="w-6 h-10 rounded-full border-2 border-purple-400/30 flex items-start justify-center p-1.5">
+          <div class="w-1 h-2 rounded-full bg-purple-400"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="relative py-20 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-header">
+        <span class="section-tag">من أنا</span>
+        <h2 class="section-title">شغف بالكود، إتقان للتفاصيل</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="glass-card group">
+          <div class="card-icon bg-gradient-to-br from-purple-500 to-pink-500"><i class="fas fa-code"></i></div>
+          <h3 class="font-bold text-lg mb-2">تطوير الواجهات</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            بناء واجهات مستخدم تفاعلية وسريعة الاستجابة بأحدث التقنيات مثل React و Next.js مع التركيز على تجربة المستخدم.
+          </p>
+        </div>
+        <div class="glass-card group">
+          <div class="card-icon bg-gradient-to-br from-blue-500 to-cyan-500"><i class="fas fa-server"></i></div>
+          <h3 class="font-bold text-lg mb-2">هندسة الخلفية</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            تصميم وبناء أنظمة خلفية قوية وقابلة للتوسع باستخدام Node.js و Python مع قواعد بيانات حديثة.
+          </p>
+        </div>
+        <div class="glass-card group">
+          <div class="card-icon bg-gradient-to-br from-orange-500 to-rose-500"><i class="fas fa-rocket"></i></div>
+          <h3 class="font-bold text-lg mb-2">DevOps & Cloud</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            نشر التطبيقات وأتمتة العمليات على AWS و Docker مع ضمان الأداء العالي والأمان والموثوقية.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="relative py-20 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-header">
+        <span class="section-tag">التقنيات</span>
+        <h2 class="section-title">أدواتي اليومية</h2>
+      </div>
+      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3" id="skills-grid"></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="relative py-20 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-header">
+        <span class="section-tag">الأعمال</span>
+        <h2 class="section-title">مشاريع تتحدث عن نفسها</h2>
+        <p class="text-gray-400 text-sm mt-3 max-w-xl mx-auto">
+          مجموعة مختارة من المشاريع التي عملت عليها مؤخرًا
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-5" id="projects-grid"></div>
+      <div id="empty-projects" class="hidden text-center py-12">
+        <div class="text-5xl mb-4">📭</div>
+        <p class="text-gray-400">لا توجد مشاريع حاليًا. تابعنا قريبًا!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="relative py-20 px-4 sm:px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="section-header">
+        <span class="section-tag">تواصل</span>
+        <h2 class="section-title">دعنا نبني شيئًا رائعًا معًا</h2>
+      </div>
+
+      <!-- Quick Contact Cards -->
+      <div class="grid sm:grid-cols-3 gap-3 mb-6">
+        <a href="https://wa.me/201090841534" target="_blank" class="contact-card whatsapp-card">
+          <div class="contact-icon bg-gradient-to-br from-green-400 to-emerald-600">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <div>
+            <div class="text-[10px] text-emerald-300/70 mb-0.5">واتساب</div>
+            <div class="font-bold text-sm" dir="ltr">01090841534</div>
+          </div>
+        </a>
+        <a href="tel:+201090841534" class="contact-card">
+          <div class="contact-icon bg-gradient-to-br from-purple-500 to-pink-500">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div>
+            <div class="text-[10px] text-purple-300/70 mb-0.5">اتصال مباشر</div>
+            <div class="font-bold text-sm" dir="ltr">01090841534</div>
+          </div>
+        </a>
+        <a href="mailto:sayed@dev.com" class="contact-card">
+          <div class="contact-icon bg-gradient-to-br from-blue-500 to-cyan-500">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div>
+            <div class="text-[10px] text-blue-300/70 mb-0.5">البريد</div>
+            <div class="font-bold text-sm" dir="ltr">sayed@dev.com</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="glass-card-lg">
+        <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="form-group">
+              <label>الاسم الكامل</label>
+              <input type="text" name="name" required placeholder="محمد أحمد">
+            </div>
+            <div class="form-group">
+              <label>رقم الهاتف</label>
+              <input type="tel" name="phone" placeholder="01xxxxxxxxx">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>الموضوع</label>
+            <input type="text" name="subject" required placeholder="فكرة مشروع جديد">
+          </div>
+          <div class="form-group">
+            <label>الرسالة</label>
+            <textarea name="message" rows="5" required placeholder="حدّثني عن مشروعك..."></textarea>
+          </div>
+          <button type="submit" class="primary-btn w-full justify-center">
+            <i class="fab fa-whatsapp text-lg"></i>
+            <span>إرسال عبر واتساب</span>
+          </button>
+        </form>
+
+        <div class="mt-8 pt-6 border-t border-white/10 grid sm:grid-cols-3 gap-4 text-center text-xs">
+          <div>
+            <div class="text-purple-300/70 mb-1">الموقع</div>
+            <div class="font-medium">القاهرة، مصر 🇪🇬</div>
+          </div>
+          <div>
+            <div class="text-purple-300/70 mb-1">وقت الرد</div>
+            <div class="font-medium">خلال ساعة</div>
+          </div>
+          <div>
+            <div class="text-purple-300/70 mb-1">العمل</div>
+            <div class="font-medium">متاح حاليًا ✨</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="relative py-10 px-6 border-t border-white/5">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+      <div>© 2026 سيد محمد · جميع الحقوق محفوظة</div>
+      <div class="flex gap-3">
+        <a href="https://wa.me/201090841534" target="_blank" class="social-icon" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/201090841534" target="_blank" class="wa-fab" title="تواصل عبر واتساب">
+    <i class="fab fa-whatsapp"></i>
+    <span class="wa-fab-pulse"></span>
+  </a>
+
+  <!-- CHATBOT BUTTON -->
+  <button id="chat-toggle" class="chat-fab" aria-label="فتح المحادثة">
+    <svg class="chat-fab-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2C6.48 2 2 6.03 2 11C2 13.54 3.19 15.83 5.14 17.42C5.05 17.84 4.79 18.83 4.5 19.5C4.27 20.04 4.06 20.5 3.93 20.79C3.85 20.97 3.94 21.18 4.13 21.23C4.71 21.4 5.85 21.7 7 21.7C8.46 21.7 9.86 21.16 11.05 20.32C11.36 20.36 11.68 20.38 12 20.38C17.52 20.38 22 16.35 22 11.38C22 6.41 17.52 2 12 2Z" fill="currentColor"/>
+      <circle cx="8" cy="11" r="1.3" fill="#0a0118"/>
+      <circle cx="12" cy="11" r="1.3" fill="#0a0118"/>
+      <circle cx="16" cy="11" r="1.3" fill="#0a0118"/>
+    </svg>
+    <span class="chat-fab-pulse"></span>
+    <span class="chat-fab-dot">AI</span>
+  </button>
+
+  <!-- CHAT TOOLTIP -->
+  <div id="chat-tooltip" class="chat-tooltip">
+    <div class="font-bold text-xs mb-0.5">👋 أنا X BLACK</div>
+    <div class="text-[10px] text-purple-200/90">اسألني أي شيء عن سيد</div>
+    <div class="chat-tooltip-arrow"></div>
+  </div>
+
+  <!-- CHATBOT WINDOW -->
+  <div id="chat-window" class="chat-window">
+    <div class="chat-header">
+      <div class="flex items-center gap-3">
+        <div class="relative">
+          <div class="chat-avatar">
+            <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+              <path d="M12 2C6.48 2 2 6.03 2 11C2 13.54 3.19 15.83 5.14 17.42C5.05 17.84 4.79 18.83 4.5 19.5C4.27 20.04 4.06 20.5 3.93 20.79C3.85 20.97 3.94 21.18 4.13 21.23C4.71 21.4 5.85 21.7 7 21.7C8.46 21.7 9.86 21.16 11.05 20.32C11.36 20.36 11.68 20.38 12 20.38C17.52 20.38 22 16.35 22 11.38C22 6.41 17.52 2 12 2Z" fill="white"/>
+              <circle cx="8" cy="11" r="1.3" fill="#a855f7"/>
+              <circle cx="12" cy="11" r="1.3" fill="#a855f7"/>
+              <circle cx="16" cy="11" r="1.3" fill="#a855f7"/>
+            </svg>
+          </div>
+          <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-[#1a0b2e]"></span>
+        </div>
+        <div>
+          <div class="font-bold text-sm bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">
+            X BLACK
+          </div>
+          <div class="text-[10px] text-purple-200/60 flex items-center gap-1.5">
+            <span class="w-1 h-1 bg-emerald-400 rounded-full animate-pulse"></span>
+            مساعد سيد الذكي · متصل
+          </div>
+        </div>
+      </div>
+      <button id="chat-close" class="chat-close-btn">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div id="chat-messages" class="chat-body"></div>
+    <div id="quick-replies" class="chat-quick"></div>
+
+    <form id="chat-form" class="chat-input-form">
+      <input id="chat-input" type="text" placeholder="اكتب رسالتك..." autocomplete="off">
+      <button type="submit"><i class="fas fa-paper-plane"></i></button>
+    </form>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
