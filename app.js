@@ -5,6 +5,18 @@ const STORAGE_KEY = 'sayed_portfolio_projects';
 // ============ DEFAULT PROJECTS (used if no saved data) ============
 const DEFAULT_PROJECTS = [
   {
+    id: 'p-athar',
+    title: 'ATHAR Perfumes',
+    desc: 'Landing page عربية فاخرة لبراند عطور، تعرض المنتجات والمميزات وآراء العملاء مع نموذج طلب ودفع عبر فودافون كاش وتجربة RTL احترافية.',
+    tags: ['Next.js', 'Tailwind CSS', 'Vercel', 'RTL UI'],
+    icon: '🌸',
+    image: null,
+    gradient: 'linear-gradient(135deg, #3f2b1f, #c08a52, #f5d7a1)',
+    demo: 'https://athar-amber.vercel.app/',
+    code: '#',
+    status: 'published'
+  },
+  {
     id: 'p1',
     title: 'منصة الكاش باك الذكية',
     desc: 'منصة تجارة إلكترونية متكاملة بنظام كاش باك ذكي ولوحة تحكم تحليلية متقدمة لإدارة آلاف المنتجات والطلبات.',
@@ -57,9 +69,19 @@ const DEFAULT_PROJECTS = [
 function getProjects() {
   try {
     const data = localStorage.getItem(STORAGE_KEY);
-    if (data) return JSON.parse(data);
+    if (data) return mergeDefaultProjects(JSON.parse(data));
   } catch (e) {}
   return DEFAULT_PROJECTS;
+}
+
+function mergeDefaultProjects(savedProjects) {
+  const saved = Array.isArray(savedProjects) ? savedProjects : [];
+  const savedIds = new Set(saved.map(p => p.id));
+  const missingDefaults = DEFAULT_PROJECTS.filter(p => p.id === 'p-athar' && !savedIds.has(p.id));
+  if (missingDefaults.length === 0) return saved;
+  const merged = [...missingDefaults, ...saved];
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+  return merged;
 }
 
 // ============ Cursor Glow ============
