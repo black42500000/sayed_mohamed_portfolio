@@ -243,19 +243,24 @@ const chatTooltip = document.getElementById('chat-tooltip');
 
 const responses = {
   greeting: [
-    "أهلًا بك! 👋✨ أنا **X BLACK**، المساعد الذكي لسيد محمد.\n\nسعيد بزيارتك! كيف يمكنني مساعدتك اليوم؟",
-    "مرحبًا! 🌟 أنا X BLACK، أعرف كل شيء عن سيد ومشاريعه.\n\nاسألني أي شيء تريد معرفته! 💫"
+    "يا أهلاً وسهلاً! 👋✨ أنا **X BLACK**، مساعد سيد الذكي والفرفوش.\n\nقول اللي في بالك: مشروع، سعر، تقنيات، نصيحة، أو حتى عايز نكسر رهبة البداية؟ 😄",
+    "نورت البورتفوليو يا بطل 🌟\nأنا X BLACK، موجود أجاوبك بسرعة وبطريقة مفيدة من غير لف ودوران. تحب نبدأ بإيه؟"
   ],
   about: "**سيد محمد** مطور برمجيات Full-Stack محترف 💼\n\n🎯 يحوّل الأفكار إلى منتجات رقمية\n⚡ خبرة +5 سنوات في التطوير\n🌍 عمل مع +30 عميل في 12 دولة\n💡 شغف بالتقنيات الحديثة والكود النظيف\n\nإيه السؤال الجاي؟ 😊",
   skills: "مهارات سيد التقنية 🚀\n\n**Frontend:**\n• React, Next.js, Vue.js\n• TypeScript, Tailwind CSS\n\n**Backend:**\n• Node.js, Python, Django\n• PostgreSQL, MongoDB, Redis\n\n**DevOps & Cloud:**\n• AWS, Docker, Linux\n• CI/CD, GitHub Actions\n\n**Mobile:**\n• React Native, Flutter 📱",
-  projects: "أنجز سيد +50 مشروعًا متنوعًا! 🎯\n\nاتجه لقسم \"الأعمال\" 👇 لاستعراضها كاملة، أو اضغط على أي مشروع لمعرفة التفاصيل!",
+  projects: "قسم الأعمال فيه نماذج قوية 🎯\n\nمنها **ATHAR Perfumes** لبراند عطور فاخر، و**El-Haddaf Academy** كمنصة تعليمية عربية، بالإضافة لمشاريع أنظمة ومتاجر ومنصات.\n\nانزل لقسم الأعمال واضغط **معاينة** لأي مشروع يعجبك.",
   contact: `تواصل مع سيد بسهولة! 📬\n\n📱 **واتساب:** 01090841534\n📞 **اتصال:** 01090841534\n📧 **البريد:** sayed@dev.com\n📍 **الموقع:** القاهرة، مصر 🇪🇬\n\n⏱️ يرد خلال ساعة\n\nاضغط على [راسلني واتساب](https://wa.me/${WHATSAPP_NUMBER}) للتواصل الفوري! 💚`,
-  price: "أسعار سيد تنافسية ومرنة! 💰\n\n🎁 **استشارة مجانية:** 30 دقيقة\n💎 **مشاريع صغيرة:** من 500$\n⭐ **مشاريع متوسطة:** 1500-5000$\n🚀 **مشاريع كبيرة:** عرض مخصص\n\nراسله على واتساب للحصول على عرض سعر مخصص! 📩",
+  price: "الأسعار بتتحدد حسب حجم الفكرة مش بالكيلو 😄💰\n\n**تقريب سريع:**\n• Landing Page احترافية: حسب التفاصيل\n• موقع شركة/براند: حسب الصفحات والمحتوى\n• متجر/لوحة تحكم/نظام كامل: عرض مخصص\n\nالأفضل تبعت تفاصيل المشروع على واتساب، وسيد يديك تقدير واضح للوقت والتكلفة.",
   hire: "ممتاز! 🎉 سيد متاح حاليًا لمشاريع جديدة\n\n✅ **خطوات البداية:**\n1. أرسل تفاصيل مشروعك\n2. اجتماع مجاني لفهم المتطلبات\n3. عرض سعر وجدول زمني\n4. بدء التنفيذ 🚀\n\n📱 **واتساب:** 01090841534\nأو املأ نموذج التواصل!",
   experience: "خبرة سيد المهنية 📈\n\n🏆 **+5 سنوات** في تطوير البرمجيات\n🌍 عمل مع شركات من **12 دولة**\n💼 **+30 عميلًا** سعيدًا\n📦 **+50 مشروعًا** ناجحًا\n🎯 معدل رضا العملاء: **98%**",
-  thanks: "العفو يا غالي! 😊✨\nيسعدني خدمتك دائمًا.\n\nهل هناك شيء آخر تريد معرفته؟ 🌟",
-  who_are_you: "أنا **X BLACK** 🤖✨\nالمساعد الذكي الشخصي لسيد محمد.\n\n💡 مهمتي أن أساعدك في:\n• معرفة المزيد عن سيد\n• استكشاف مهاراته ومشاريعه\n• الإجابة على أسئلتك بسرعة\n• توصيلك لسيد بسهولة\n\nاسألني أي شيء! 🚀",
-  default: "هممم 🤔 سؤال مثير!\n\nيمكنني مساعدتك في:\n• 👤 معرفة المزيد عن سيد\n• 💻 استكشاف مهاراته التقنية\n• 🚀 الاطلاع على مشاريعه\n• 📞 التواصل معه\n• 💰 الأسعار والخدمات\n\nاختر من الأزرار بالأسفل أو اسأل بحرية! ✨"
+  services: "سيد يقدر يساعدك في حاجات كتير بشكل احترافي 🛠️\n\n• مواقع تعريفية وLanding Pages\n• متاجر إلكترونية\n• لوحات تحكم وإدارة محتوى\n• أنظمة حجز وطلبات\n• تحسين واجهات وتجربة مستخدم\n• ربط واتساب، دفع، APIs، وDeploy\n\nيعني لو عندك فكرة، غالبًا نقدر نحولها لمنتج شغال.",
+  timeline: "المدة بتعتمد على حجم المشروع ⏱️\n\n• صفحة هبوط بسيطة: غالبًا أسرع\n• موقع متعدد الصفحات: وقت متوسط\n• نظام بلوحة تحكم أو متجر: يحتاج تحليل وتنفيذ واختبار\n\nابعت تفاصيلك وسيد يحدد لك Timeline واضح بدل الكلام المطاطي.",
+  process: "طريقة الشغل منظمة ومريحة ✅\n\n1. فهم الهدف والجمهور\n2. تحديد الصفحات والمميزات\n3. تصميم وتنفيذ الواجهة\n4. ربط الوظائف المطلوبة\n5. اختبار على الموبايل والديسكتوب\n6. رفع المشروع وتسليمه\n\nوالأهم: تتابع كل مرحلة من غير صداع.",
+  support: "بعد التسليم مش بنختفي في الضباب 😄\n\nفيه دعم للتعديلات البسيطة، شرح طريقة الاستخدام، ومساعدة في الرفع أو ربط الدومين حسب الاتفاق.",
+  joke: "نكتة مطورين سريعة: ليه المبرمج بيحب الظلام؟\nعشان الـ bugs بتبان أكتر في الـ console 😂\n\nبس اطمن، سيد بيطاردها قبل التسليم.",
+  thanks: "العفو يا غالي! 😊✨\nوجودك منور الشات. لو عندك فكرة مشروع قولها وأنا أرتبهالك كمتطلبات أولية.",
+  who_are_you: "أنا **X BLACK** 🤖✨\nمساعد سيد الذكي، فرفوش عند اللزوم ومحترف وقت الجد.\n\nأقدر أشرح لك الخدمات، الأسعار، المشاريع، طريقة الشغل، أو أساعدك تجهز رسالة واتساب مختصرة لسيد.",
+  default: "سمعتك يا نجم 😄\n\nأنا أقدر أساعدك بأفضل شكل لو سؤالك عن سيد أو المشاريع أو تنفيذ موقع/تطبيق. جرّب تسألني مثلًا:\n• أعمل موقع زي ATHAR بكام؟\n• سيد بيستخدم إيه؟\n• عايز منصة تعليمية\n• ابعت لسيد واتساب\n\nولو سؤالك خارج المجال، هديك رد لطيف ومفيد على قد ما أقدر."
 };
 
 const quickOptions = [
@@ -264,8 +269,10 @@ const quickOptions = [
   { text: '🚀 مشاريعه', key: 'projects' },
   { text: '📱 واتساب', key: 'contact' },
   { text: '💰 الأسعار', key: 'price' },
+  { text: '🛠️ الخدمات', key: 'services' },
+  { text: '⏱️ المدة', key: 'timeline' },
   { text: '🤝 وظّفه', key: 'hire' },
-  { text: '🤖 من أنت؟', key: 'who_are_you' },
+  { text: '😄 فرفشني', key: 'joke' },
 ];
 
 function addMsg(text, sender = 'bot') {
@@ -318,28 +325,60 @@ function renderQuick() {
 }
 
 function detectIntent(text) {
-  const t = text.toLowerCase().trim();
-  if (/مرحب|اهل|أهل|سلام|هاي|hi|hello|hey|صباح|مساء/.test(t)) return 'greeting';
-  if (/من هو سيد|عن سيد|نبذة|تعريف|من سيد|about|من هو/.test(t)) return 'about';
-  if (/مهار|تقني|لغ|skill|tech|stack|يعرف|يتقن|يجيد|programming/.test(t)) return 'skills';
-  if (/مشروع|أعمال|اعمال|portfolio|project|work|سابق|نماذج/.test(t)) return 'projects';
-  if (/تواصل|اتصال|ايميل|إيميل|بريد|contact|email|phone|رقم|واتس|whatsapp/.test(t)) return 'contact';
-  if (/سعر|تكلف|اسعار|أسعار|price|cost|كم|فلوس|ميزانية/.test(t)) return 'price';
+  const t = normalizeText(text);
+  if (/مرحب|اهل|سلام|هاي|هلا|ازيك|عامل ايه|hi|hello|hey|صباح|مساء/.test(t)) return 'greeting';
+  if (/من هو سيد|عن سيد|نبذه|تعريف|من سيد|about|مين سيد|عرفني/.test(t)) return 'about';
+  if (/مهار|تقني|لغات|skill|tech|stack|يعرف|يتقن|يجيد|programming|فريم/.test(t)) return 'skills';
+  if (/مشروع|اعمال|portfolio|project|work|سابق|نماذج|اثار|athar|الهداف|haddaf|elhaddaf/.test(t)) return 'projects';
+  if (/خدم|تعمل ايه|يقدر يعمل|موقع|متجر|تطبيق|لوحه|سيستم|system|website|landing|dashboard/.test(t)) return 'services';
+  if (/تواصل|اتصال|ايميل|بريد|contact|email|phone|رقم|واتس|whatsapp|كلمه|اكلمه/.test(t)) return 'contact';
+  if (/سعر|تكلف|اسعار|price|cost|كم|فلوس|ميزانيه|عرض سعر|كام/.test(t)) return 'price';
+  if (/مده|وقت|هياخد|امتى|ينتهي|timeline|delivery|تسليم/.test(t)) return 'timeline';
+  if (/طريقه الشغل|خطوات|process|ازاي نبدأ|نبدا|تنفيذ|workflow/.test(t)) return 'process';
+  if (/دعم|صيانه|تعديل|بعد التسليم|support|maintenance/.test(t)) return 'support';
   if (/وظف|توظيف|اشغل|hire|job|عمل معه|تعاون|اشتغل/.test(t)) return 'hire';
-  if (/خبرة|سنوات|تجربة|experience|years|كم سنة/.test(t)) return 'experience';
-  if (/شكر|thanks|thank|تمام|ok|حلو|رائع|شكرا/.test(t)) return 'thanks';
-  if (/من انت|من أنت|ما اسمك|انت مين|who are you|اسمك ايه/.test(t)) return 'who_are_you';
+  if (/خبره|سنوات|تجربه|experience|years|كم سنه/.test(t)) return 'experience';
+  if (/نكت|هزار|فرفش|ضحكني|joke|funny/.test(t)) return 'joke';
+  if (/شكر|thanks|thank|تمام|ok|حلو|رائع|شكرا|تسلم/.test(t)) return 'thanks';
+  if (/من انت|ما اسمك|انت مين|who are you|اسمك ايه|بوت/.test(t)) return 'who_are_you';
   return 'default';
 }
 
-function respond(key) {
+function normalizeText(text) {
+  return String(text || '')
+    .toLowerCase()
+    .replace(/[أإآ]/g, 'ا')
+    .replace(/ى/g, 'ي')
+    .replace(/ة/g, 'ه')
+    .replace(/[؟?!.،,]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function buildFallback(userText) {
+  const clean = normalizeText(userText);
+  if (clean.length <= 2) {
+    return "رسالتك وصلت بس قصيرة جدًا يا نجم 😄\nاكتبلي سؤالك بتفاصيل أكتر وأنا أرد عليك بشكل مفيد.";
+  }
+  if (/عايز|اريد|محتاج|نفسي|ممكن/.test(clean)) {
+    return "تمام، واضح إن عندك طلب معين 👌\n\nلو الطلب له علاقة بموقع أو تطبيق أو مشروع، ابعتلي:\n• نوع المشروع\n• الصفحات المطلوبة\n• هل فيه لوحة تحكم؟\n• هل محتاج دفع أو واتساب؟\n\nوأنا أرتبهولك قبل ما تكلم سيد.";
+  }
+  if (/ازاي|كيف|شرح|وضح/.test(clean)) {
+    return "سؤال شرح جميل 👌\nلو تقصد تنفيذ موقع أو مشروع، الفكرة ببساطة: نحدد المطلوب، نعمل تصميم مناسب، ننفذ، نختبر، وبعدها نرفع المشروع.\n\nقوللي تقصد شرح إيه بالضبط وأنا أفصلهولك.";
+  }
+  return responses.default;
+}
+
+function respond(key, userText = '') {
   showTyping();
   setTimeout(() => {
     hideTyping();
     const r = responses[key];
-    const text = Array.isArray(r) ? r[Math.floor(Math.random() * r.length)] : r;
+    const text = key === 'default'
+      ? buildFallback(userText)
+      : (Array.isArray(r) ? r[Math.floor(Math.random() * r.length)] : r);
     addMsg(text, 'bot');
-  }, 700 + Math.random() * 700);
+  }, 550 + Math.random() * 650);
 }
 
 if (chatForm) {
@@ -349,7 +388,7 @@ if (chatForm) {
     if (!text) return;
     addMsg(text, 'user');
     chatInput.value = '';
-    respond(detectIntent(text));
+    respond(detectIntent(text), text);
   });
 }
 
