@@ -4,6 +4,7 @@ const STORAGE_KEY = 'sayed_portfolio_projects';
 const AUTH_KEY = 'sayed_admin_auth';
 
 const DEFAULT_PROJECTS = [
+  { id: 'p-elhaddaf', title: 'El-Haddaf Academy', desc: 'منصة تعليمية عربية لأكاديمية الهداف، مصممة لتقديم تجربة واضحة وسريعة للطلاب مع واجهة RTL منظمة وهوية بصرية مناسبة للمحتوى التعليمي.', tags: ['Next.js', 'Vercel', 'Responsive UI', 'RTL UI'], icon: '🎯', image: null, gradient: 'linear-gradient(135deg, #0f172a, #2563eb, #22c55e)', demo: 'https://elhaddaf.vercel.app/', code: '#', status: 'published' },
   { id: 'p-athar', title: 'ATHAR Perfumes', desc: 'Landing page عربية فاخرة لبراند عطور، تعرض المنتجات والمميزات وآراء العملاء مع نموذج طلب ودفع عبر فودافون كاش وتجربة RTL احترافية.', tags: ['Next.js', 'Tailwind CSS', 'Vercel', 'RTL UI'], icon: '🌸', image: null, gradient: 'linear-gradient(135deg, #3f2b1f, #c08a52, #f5d7a1)', demo: 'https://athar-amber.vercel.app/', code: '#', status: 'published' },
   { id: 'p1', title: 'منصة الكاش باك الذكية', desc: 'منصة تجارة إلكترونية متكاملة بنظام كاش باك ذكي ولوحة تحكم تحليلية متقدمة لإدارة آلاف المنتجات والطلبات.', tags: ['Next.js', 'PostgreSQL', 'Stripe', 'Redis'], icon: '🛍️', image: null, gradient: 'linear-gradient(135deg, #8b5cf6, #ec4899)', demo: '#', code: '#', status: 'published' },
   { id: 'p2', title: 'مساعد ذكي بالـ AI', desc: 'تطبيق محادثة بالذكاء الاصطناعي يدعم اللغة العربية بمعالجة لغوية متقدمة وتكامل مع نماذج GPT-4.', tags: ['Python', 'FastAPI', 'OpenAI', 'WebSocket'], icon: '🤖', image: null, gradient: 'linear-gradient(135deg, #06b6d4, #3b82f6)', demo: '#', code: '#', status: 'published' },
@@ -24,7 +25,8 @@ function getProjects() {
 function mergeDefaultProjects(savedProjects) {
   const saved = Array.isArray(savedProjects) ? savedProjects : [];
   const savedIds = new Set(saved.map(p => p.id));
-  const missingDefaults = DEFAULT_PROJECTS.filter(p => p.id === 'p-athar' && !savedIds.has(p.id));
+  const pinnedDefaults = new Set(['p-athar', 'p-elhaddaf']);
+  const missingDefaults = DEFAULT_PROJECTS.filter(p => pinnedDefaults.has(p.id) && !savedIds.has(p.id));
   if (missingDefaults.length === 0) return saved;
   const merged = [...missingDefaults, ...saved];
   localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));

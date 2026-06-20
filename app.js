@@ -5,6 +5,18 @@ const STORAGE_KEY = 'sayed_portfolio_projects';
 // ============ DEFAULT PROJECTS (used if no saved data) ============
 const DEFAULT_PROJECTS = [
   {
+    id: 'p-elhaddaf',
+    title: 'El-Haddaf Academy',
+    desc: 'منصة تعليمية عربية لأكاديمية الهداف، مصممة لتقديم تجربة واضحة وسريعة للطلاب مع واجهة RTL منظمة وهوية بصرية مناسبة للمحتوى التعليمي.',
+    tags: ['Next.js', 'Vercel', 'Responsive UI', 'RTL UI'],
+    icon: '🎯',
+    image: null,
+    gradient: 'linear-gradient(135deg, #0f172a, #2563eb, #22c55e)',
+    demo: 'https://elhaddaf.vercel.app/',
+    code: '#',
+    status: 'published'
+  },
+  {
     id: 'p-athar',
     title: 'ATHAR Perfumes',
     desc: 'Landing page عربية فاخرة لبراند عطور، تعرض المنتجات والمميزات وآراء العملاء مع نموذج طلب ودفع عبر فودافون كاش وتجربة RTL احترافية.',
@@ -77,7 +89,8 @@ function getProjects() {
 function mergeDefaultProjects(savedProjects) {
   const saved = Array.isArray(savedProjects) ? savedProjects : [];
   const savedIds = new Set(saved.map(p => p.id));
-  const missingDefaults = DEFAULT_PROJECTS.filter(p => p.id === 'p-athar' && !savedIds.has(p.id));
+  const pinnedDefaults = new Set(['p-athar', 'p-elhaddaf']);
+  const missingDefaults = DEFAULT_PROJECTS.filter(p => pinnedDefaults.has(p.id) && !savedIds.has(p.id));
   if (missingDefaults.length === 0) return saved;
   const merged = [...missingDefaults, ...saved];
   localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
