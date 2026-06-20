@@ -1,5 +1,5 @@
 // ============ ADMIN PANEL LOGIC ============
-const ADMIN_PASSWORD = 'sayed2026'; // Default password
+const ADMIN_PASSWORD_HASH = '9ee8bbd851a723074a134b0923ba3c095206751bedc6364562cc010db7ea76b9';
 const STORAGE_KEY = 'sayed_portfolio_projects';
 const AUTH_KEY = 'sayed_admin_auth';
 
@@ -29,20 +29,32 @@ function isAuthenticated() {
   return sessionStorage.getItem(AUTH_KEY) === '1';
 }
 
-function handleLogin(e) {
+async function handleLogin(e) {
   e.preventDefault();
   const pwd = document.getElementById('login-password').value;
   const err = document.getElementById('login-error');
-  if (pwd === ADMIN_PASSWORD) {
+  if (!window.crypto?.subtle) {
+    err.textContent = 'المتصفح لا يدعم تسجيل الدخول الآمن. افتح الموقع عبر HTTPS.';
+    err.classList.remove('hidden');
+    return;
+  }
+
+  if (await sha256(pwd) === ADMIN_PASSWORD_HASH) {
     sessionStorage.setItem(AUTH_KEY, '1');
     showDashboard();
   } else {
-    err.textContent = '❌ كلمة المرور غير صحيحة';
+    err.textContent = 'كلمة المرور غير صحيحة';
     err.classList.remove('hidden');
     setTimeout(() => err.classList.add('hidden'), 3000);
   }
 }
 window.handleLogin = handleLogin;
+
+async function sha256(value) {
+  const bytes = new TextEncoder().encode(value);
+  const hash = await crypto.subtle.digest('SHA-256', bytes);
+  return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
 
 function handleLogout() {
   sessionStorage.removeItem(AUTH_KEY);
@@ -121,19 +133,22 @@ function renderProjects() {
           ${p.tags.length > 3 ? `<span class="tag" style="font-size:0.6rem;padding:0.15rem 0.5rem;">+${p.tags.length - 3}</span>` : ''}
         </div>
         <div class="flex gap-1.5 flex-wrap">
-          <button onclick="editProject('${p.id}')" class="action-btn edit">
+          <button type="button" data-action="edit" data-id="${escapeHtml(p.id)}" class="action-btn edit">
             <i class="fas fa-edit"></i> تعديل
           </button>
-          <button onclick="togglePublish('${p.id}')" class="action-btn toggle">
+          <button type="button" data-action="toggle" data-id="${escapeHtml(p.id)}" class="action-btn toggle">
             <i class="fas fa-${p.status === 'published' ? 'eye-slash' : 'eye'}"></i>
             ${p.status === 'published' ? 'إخفاء' : 'نشر'}
           </button>
-          <button onclick="askDelete('${p.id}')" class="action-btn delete">
+          <button type="button" data-action="delete" data-id="${escapeHtml(p.id)}" class="action-btn delete">
             <i class="fas fa-trash"></i> حذف
           </button>
         </div>
       </div>
     `;
+    card.querySelector('[data-action="edit"]').addEventListener('click', () => editProject(p.id));
+    card.querySelector('[data-action="toggle"]').addEventListener('click', () => togglePublish(p.id));
+    card.querySelector('[data-action="delete"]').addEventListener('click', () => askDelete(p.id));
     list.appendChild(card);
   });
 }

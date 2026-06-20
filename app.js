@@ -142,9 +142,9 @@ function renderPublicProjects() {
           ${p.tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}
         </div>
         <div class="flex gap-2 flex-wrap">
-          ${p.demo && p.demo !== '#' ? `<a href="${escapeAttr(p.demo)}" target="_blank" class="link-btn primary"><i class="fas fa-external-link-alt"></i> معاينة</a>` : ''}
-          ${p.code && p.code !== '#' ? `<a href="${escapeAttr(p.code)}" target="_blank" class="link-btn outline"><i class="fab fa-github"></i> الكود</a>` : ''}
-          <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('مرحبًا سيد، أريد معرفة المزيد عن مشروع: ' + p.title)}" target="_blank" class="link-btn whatsapp">
+          ${p.demo && p.demo !== '#' ? `<a href="${escapeAttr(p.demo)}" target="_blank" rel="noopener noreferrer" class="link-btn primary"><i class="fas fa-external-link-alt"></i> معاينة</a>` : ''}
+          ${p.code && p.code !== '#' ? `<a href="${escapeAttr(p.code)}" target="_blank" rel="noopener noreferrer" class="link-btn outline"><i class="fab fa-github"></i> الكود</a>` : ''}
+          <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('مرحبًا سيد، أريد معرفة المزيد عن مشروع: ' + p.title)}" target="_blank" rel="noopener noreferrer" class="link-btn whatsapp">
             <i class="fab fa-whatsapp"></i> استفسار
           </a>
         </div>
@@ -177,7 +177,7 @@ function handleContactSubmit(e) {
                `💬 *الرسالة:*\n${message}`;
 
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
-  window.open(url, '_blank');
+  window.open(url, '_blank', 'noopener,noreferrer');
   showToast('جاري فتح واتساب لإرسال رسالتك... 📲');
   f.reset();
 }
@@ -241,9 +241,9 @@ function addMsg(text, sender = 'bot') {
     : `<div class="msg-avatar-sm"><i class="fas fa-user"></i></div>`;
 
   // Format: **bold**, [text](url), \n
-  let formatted = text
+  let formatted = escapeHtml(text)
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="color:#6ee7b7;text-decoration:underline;font-weight:700;">$1</a>')
+    .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="color:#6ee7b7;text-decoration:underline;font-weight:700;">$1</a>')
     .replace(/\n/g, '<br>');
 
   msg.innerHTML = sender === 'bot'
